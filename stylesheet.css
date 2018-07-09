@@ -1,13 +1,10 @@
 html {
-
-
-
 }
 
 body {
-  background: url(images/bg2.gif);
-  background-repeat: no-repeat;
-  background-size: 10000px 10000px;
-  width: 10000px;
-  height: 10000px;
+	background: url(images/bg2.gif);
+	background-repeat: no-repeat;
+	background-size: 10000px 10000px;
+	width: 10000px;
+	height: 10000px;
 }
