@@ -19,8 +19,6 @@
 	"homepage": "https://github.com/STAH0193/imm#readme",
 	"dependencies": {
 		"eslint": "^5.1.0",
-		"matter-js": "^0.14.2",
-		"paper": "^0.11.5",
 		"parcel-bundler": "^1.9.4",
 		"prettier": "^1.13.7"
 	},
