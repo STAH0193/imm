@@ -4,61 +4,138 @@ html {
 	background-image: url(images/YellowBackground.png);
 	background-repeat: repeat;
 	background-size: 20px;
+	font-family: 'Dosis', sans-serif;
 }
 
 footer {
 	position: fixed;
-	left: 0;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
 	bottom: 0;
 	width: 100%;
 	height: 8%;
-	font-weight: 1000;
-	color: purple;
+
 	text-shadow: 2px 2px 5px rgb(183, 0, 255);
 	color: black;
 
 	font-size: 30px;
 	letter-spacing: 20px;
-	margin-left: 30px;
+}
+
+.footer-image {
+	position: fixed;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	max-height: 150px;
+	max-width: 375px;
+	bottom: -70px;
+	z-index: -1;
+}
+
+.footer-scroll {
+	/* Starting position */
+	-moz-transform: translateX(0%);
+	-webkit-transform: translateX(0%);
+	transform: translateX(0%);
+	/* Apply animation to this element */
+	-moz-animation: scroll-right 5s linear infinite;
+	-webkit-animation: scroll-right 10s linear infinite;
+	animation: scroll-right 10s linear infinite;
 }
 
 #arrow {
+	position: absolute;
+	display: block;
 	text-shadow: 2px 2px rgb(0, 4, 255);
-	bottom: 15px;
+	bottom: 6px;
+	line-height: 65px;
+	font-size: 30px;
+	z-index: -1;
+}
+
+.blue {
+	text-shadow: 1px 1px rgb(0, 255, 242);
 }
 
 .logo {
-	width: 95%;
+	width: 85%;
+	max-width: 650px;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 35%;
+	margin-top: 10%;
+}
+
+.logo:hover {
+	cursor: default;
+	transform: rotate(360deg);
+	transition: all 0.3s ease-in-out 0s;
+}
+
+.button {
+	position: fixed;
+	top: 5px;
+	right: 5px;
+	width: 75px;
+}
+
+.button:hover {
+	animation: jiggle 0.3s infinite linear;
+}
+.button2 {
+	position: fixed;
+	top: 0;
+	right: 75px;
+	width: 75px;
+}
+.button2:hover {
+	animation: jiggle 0.3s infinite linear;
+}
+@keyframes jiggle {
+	0% {
+		transform: rotate(0deg) scale(1.15, 1.15);
+	}
+
+	50% {
+		transform: rotate(2deg) scale(1.15, 1.15);
+	}
+
+	100% {
+		transform: rotate(-2deg) scale(1.15, 1.15);
+	}
 }
 
 .IMM {
 	position: absolute;
 	font-size: 1.75em;
 	text-shadow: 2px 2px rgb(117, 255, 99);
-	margin-left: 10px;
-	margin-top: 30px;
+	margin-left: 15px;
+	margin-top: 5px;
 	font-weight: bolder;
-}
-
-.IMM2 {
-	position: absolute;
-	font-size: 1.75em;
-	text-shadow: 2px 2px aqua;
-	margin-top: -50px;
-	margin-left: 20px;
 }
 
 .IMM3 {
 	position: absolute;
-	padding-top: 20px;
-	font-size: 35px;
-	text-align: right;
-	text-shadow: 2px 2px rgb(255, 0, 0);
-	margin-left: 50px;
+	top: 78%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	font-size: 30px;
+	text-align: left;
+	text-shadow: 1px 1px rgb(255, 0, 0);
+	max-width: 800px;
+	width: 80%;
+
+	font-family: 'Dosis';
+
+	background: radial-gradient(
+		ellipse at center,
+		rgba(54, 255, 50, 1) 0%,
+		rgba(125, 185, 232, 0) 60%
+	);
 }
 
 .IMM:hover {
@@ -76,27 +153,8 @@ footer {
 	direction: rtl;
 }
 
-.scroll-right {
-	overflow: hidden;
-}
-.scroll-right p {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	margin: 0;
-	line-height: 75px;
-	text-align: center;
-	/* Starting position */
-	-moz-transform: translateX(0%);
-	-webkit-transform: translateX(0%);
-	transform: translateX(0%);
-	/* Apply animation to this element */
-	-moz-animation: scroll-right 5s linear infinite;
-	-webkit-animation: scroll-right 10s linear infinite;
-	animation: scroll-right 10s linear infinite;
-}
 /* Move it (define the animation) */
-@-moz-keyframes scroll-right {
+@-moz-keyframes .footer-scroll {
 	0% {
 		-moz-transform: translateX(-100%);
 	}
@@ -104,7 +162,7 @@ footer {
 		-moz-transform: translateX(100%);
 	}
 }
-@-webkit-keyframes scroll-right {
+@-webkit-keyframes .footer-scroll {
 	0% {
 		-webkit-transform: translateX(-100%);
 	}
@@ -122,5 +180,43 @@ footer {
 		-moz-transform: translateX(100%); /* Browser bug fix */
 		-webkit-transform: translateX(100%); /* Browser bug fix */
 		transform: translateX(100%);
+	}
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes logo {
+	0% {
+		top: 0px;
+	}
+	25% {
+		top: 10px;
+	}
+	50% {
+		top: 20px;
+	}
+	75% {
+		top: 10px;
+	}
+	100% {
+		top: 0px;
+	}
+}
+
+/* Standard syntax */
+@keyframes logo {
+	0% {
+		top: 0px;
+	}
+	25% {
+		top: 10px;
+	}
+	50% {
+		top: 20px;
+	}
+	75% {
+		top: 10px;
+	}
+	100% {
+		top: 0px;
 	}
 }
